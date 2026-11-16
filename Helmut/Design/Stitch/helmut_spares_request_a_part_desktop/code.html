@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0C7475",
+            "primary-hover": "#095859",
+            "primary-container": "#0C7475",
+            "on-primary": "#FFFFFF",
+            "charcoal": "#231F20",
+            "paper-bg": "#F5F1E8",
+            "surface-pure": "#FFFFFF",
+            "border-subtle": "#D8D1C2",
+            "text-primary": "#17181A",
+            "text-muted": "#59554E",
+            "text-secondary": "#59554E",
+            "whatsapp-green": "#25D366"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          fontFamily: {
+            "headline": ["Barlow Condensed", "sans-serif"],
+            "body": ["Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-paper-bg font-body text-text-primary antialiased min-h-screen flex flex-col">
+<!-- Fixed Top Header -->
+<header class="fixed top-0 left-0 w-full z-50 bg-paper-bg">
+<!-- Top Strip: Charcoal #231F20 -->
+<div class="w-full bg-charcoal text-[#F5F1E8] px-4 lg:px-8 py-2 text-xs border-b border-black/20">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
+<div class="flex items-center gap-4 flex-wrap">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-[#D8D1C2]">call</span>
+<span class="font-medium tracking-wider">016 421 3559</span>
+</span>
+<span class="hidden md:inline text-white/30">·</span>
+<span class="flex items-center gap-1.5 text-white/80">
+<span class="material-symbols-outlined text-[15px] text-[#D8D1C2]">location_on</span>
+            19 Rhodes Avenue, Vereeniging, 1930
+          </span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-white/80">Mon-Thu 9-5 · Fri 9-12 &amp; 2-5 · Sat 9-1</span>
+<span class="hidden sm:inline text-white/30">·</span>
+<a class="flex items-center gap-1.5 bg-whatsapp-green text-text-primary font-semibold px-2.5 py-0.5 rounded text-xs hover:opacity-90 transition-opacity" href="#">
+<span class="material-symbols-outlined text-[14px]">chat</span>
+            WhatsApp
+          </a>
+</div>
+</div>
+</div>
+<!-- Main Navigation Bar -->
+<div class="w-full bg-surface-pure border-b border-border-subtle shadow-sm">
+<div class="h-20 max-w-7xl mx-auto px-4 lg:px-8 flex items-center justify-between gap-6">
+<!-- Brand Logo -->
+<a class="flex items-center gap-3 shrink-0" href="#">
+<img alt="Helmut Spares Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrD8iDvkKPM_qb8zSGF9mYUt95oHdM2nqjT3Fham2V2vbyhWl3Pbr2TN913k6HFny2k5ebYsLgTMryZz5EmPbASCWYWbBJCh9F06Lchmxp6vMV3onQu5RO7omLi5Bq-svMazULnwwbN2pTowbVcrYz56cxFw0omZDerNqXPojFfSYtY1rEFx9HxLq6ftj5hm7XwZc-gDZTa2gWDYlvgEGDCPuYGHDEpT1nJhHX6Y-IpG"/>
+<div class="flex flex-col leading-none">
+<span class="font-headline text-2xl tracking-wider uppercase text-text-primary font-bold">HELMUT SPARES</span>
+<span class="font-headline text-xs tracking-widest text-primary uppercase font-semibold">Est. 1975 · Vereeniging</span>
+</div>
+</a>
+<!-- Ordered Nav Links: Home, About Us, Beetle Price List, Shop Online, Contact Us -->
+<nav class="hidden lg:flex items-center gap-7 h-full">
+<a class="h-full flex items-center font-headline text-lg uppercase tracking-wider text-text-muted hover:text-text-primary transition-colors" href="#">Home</a>
+<a class="h-full flex items-center font-headline text-lg uppercase tracking-wider text-text-muted hover:text-text-primary transition-colors" href="#">About Us</a>
+<a class="h-full flex items-center font-headline text-lg uppercase tracking-wider text-text-muted hover:text-text-primary transition-colors" href="#">Beetle Price List</a>
+<a class="h-full flex items-center font-headline text-lg uppercase tracking-wider text-text-muted hover:text-text-primary transition-colors" href="#">Shop Online</a>
+<a class="h-full flex items-center font-headline text-lg uppercase tracking-wider text-primary font-bold border-b-2 border-primary" href="#">Contact Us</a>
+</nav>
+<!-- Right Bar Tools -->
+<div class="flex items-center gap-3">
+<div class="relative hidden sm:block w-44 xl:w-56">
+<input class="w-full bg-paper-bg border border-border-subtle rounded py-2 pl-9 pr-3 text-xs text-text-primary placeholder:text-text-muted focus:outline-none focus:border-primary" placeholder="Search parts..." type="text"/>
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-text-muted text-[17px]">search</span>
+</div>
+<a class="relative p-2 rounded hover:bg-paper-bg text-text-primary transition-colors flex items-center justify-center" href="#">
+<span class="material-symbols-outlined text-[24px]">shopping_cart</span>
+<span class="absolute top-1 right-1 bg-primary text-on-primary font-headline text-xs w-4 h-4 rounded-full flex items-center justify-center leading-none">0</span>
+</a>
+<a class="hidden sm:flex items-center gap-1.5 bg-whatsapp-green text-text-primary font-semibold hover:opacity-95 transition-opacity px-3 py-2 rounded font-headline text-sm uppercase tracking-wider shadow-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>WhatsApp Us</span>
+</a>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Wrapper -->
+<main class="w-full pt-28 bg-paper-bg flex-1">
+<div class="flex flex-col w-full">
+<!-- Breadcrumbs & Heading Section -->
+<section class="w-full px-4 lg:px-8 pt-8 pb-6 max-w-7xl mx-auto">
+<nav class="flex items-center gap-2 text-xs font-mono text-text-muted mb-4">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[15px]">home</span>
+<span>Home</span>
+</a>
+<span>/</span>
+<span class="text-text-primary font-semibold uppercase tracking-wider">Request a Part</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end border-b border-border-subtle pb-8">
+<div class="lg:col-span-8 space-y-3">
+<div class="inline-flex items-center gap-2 bg-charcoal text-white px-3 py-1 rounded font-headline text-xs tracking-widest uppercase">
+<span class="material-symbols-outlined text-[15px] text-whatsapp-green">build</span>
+<span>Workshop Stock Sourcing · Vereeniging</span>
+</div>
+<h1 class="font-headline text-4xl sm:text-5xl uppercase tracking-tight text-text-primary leading-tight font-extrabold">
+              Can't find it? <span class="text-primary">We'll find it for you.</span>
+</h1>
+<p class="font-body text-base sm:text-lg text-text-muted max-w-3xl leading-relaxed">
+              Over 15,000 parts in stock. Call to confirm availability. Tell us what you need and our workshop counter team will check physical stock and respond to your enquiry.
+            </p>
+</div>
+<div class="lg:col-span-4 flex lg:justify-end">
+<div class="bg-surface-pure border border-border-subtle rounded p-4 flex items-center gap-4 w-full sm:w-auto shadow-sm">
+<div class="w-12 h-12 bg-primary/10 rounded flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[28px]">inventory_2</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline text-lg uppercase text-text-primary font-bold">15,000+ Parts In Stock</span>
+<span class="text-xs text-text-muted">Call to confirm availability</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content 2-Column Split -->
+<section class="w-full px-4 lg:px-8 pb-16 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT FORM COLUMN (7 cols) -->
+<div class="lg:col-span-7 bg-surface-pure border border-border-subtle rounded p-6 sm:p-8 shadow-sm">
+<div class="flex items-center justify-between pb-5 border-b border-border-subtle mb-6">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-8 h-8 rounded bg-primary text-on-primary font-headline text-base font-bold">1</span>
+<div>
+<h2 class="font-headline text-2xl uppercase text-text-primary font-bold leading-tight">Part Request Form</h2>
+<p class="text-xs text-text-muted">Direct enquiry to our workshop counter</p>
+</div>
+</div>
+<span class="font-headline text-xs uppercase bg-paper-bg px-2.5 py-1 rounded border border-border-subtle text-text-muted font-semibold tracking-wider">
+                Direct Counter Enquiry
+              </span>
+</div>
+<form class="space-y-6" id="partRequestForm" onsubmit="event.preventDefault(); document.getElementById('successToast').classList.remove('hidden');">
+<!-- Vehicle Platform & Model Year/Engine -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="font-headline text-sm uppercase tracking-wider text-text-primary flex items-center gap-1 font-semibold" for="vehicleModel">
+<span>Vehicle Platform</span>
+<span class="text-primary">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-11 bg-paper-bg border border-border-subtle rounded px-3 text-sm text-text-primary appearance-none focus:outline-none focus:border-primary transition-colors pr-9" id="vehicleModel" required="">
+<option disabled="" selected="" value="">Select vehicle platform</option>
+<option value="vw-beetle">VW Beetle</option>
+<option value="beach-buggy">Beach Buggy</option>
+<option value="kombi-bus">VW Kombi / Microbus</option>
+<option value="karmann-ghia">Karmann Ghia</option>
+<option value="golf-mk1-mk2">Golf Mk1 / Mk2</option>
+<option value="polo">VW Polo</option>
+<option value="audi-classic">Audi</option>
+<option value="other-classic-vw">Other Classic VW</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="font-headline text-sm uppercase tracking-wider text-text-primary flex items-center gap-1 font-semibold" for="engineYear">
+<span>Model Year &amp; Engine</span>
+<span class="text-primary">*</span>
+</label>
+<input class="w-full h-11 bg-paper-bg border border-border-subtle rounded px-3 text-sm text-text-primary placeholder:text-text-muted/60 focus:outline-none focus:border-primary transition-colors" id="engineYear" placeholder="" required="" type="text"/>
+</div>
+</div>
+<!-- Part Description -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between">
+<label class="font-headline text-sm uppercase tracking-wider text-text-primary flex items-center gap-1 font-semibold" for="partNeeded">
+<span>Part(s) Needed &amp; Specifics</span>
+<span class="text-primary">*</span>
+</label>
+</div>
+<textarea class="w-full bg-paper-bg border border-border-subtle rounded p-3 text-sm text-text-primary placeholder:text-text-muted/60 focus:outline-none focus:border-primary transition-colors leading-relaxed" id="partNeeded" placeholder="" required="" rows="4"></textarea>
+</div>
+<!-- Photo Upload Dropzone -->
+<div class="space-y-2">
+<label class="font-headline text-sm uppercase tracking-wider text-text-primary flex items-center gap-1.5 font-semibold">
+<span>Photo of Sample or Component</span>
+<span class="text-xs text-text-muted font-normal lowercase">(optional)</span>
+</label>
+<div class="border-2 border-dashed border-border-subtle rounded p-6 bg-paper-bg/40 hover:bg-paper-bg hover:border-text-muted transition-all cursor-pointer text-center relative group" id="dropzone">
+<input accept="image/png, image/jpeg" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" id="photoUpload" type="file"/>
+<div class="flex flex-col items-center justify-center space-y-2 pointer-events-none">
+<div class="w-10 h-10 rounded-full bg-paper-bg border border-border-subtle flex items-center justify-center text-text-muted group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">add_a_photo</span>
+</div>
+<div>
+<span class="font-headline text-sm text-text-primary uppercase tracking-wide font-semibold">Upload photo of part</span>
+<p class="text-xs text-text-muted">PNG or JPG files accepted</p>
+</div>
+<div class="hidden mt-2 inline-flex items-center gap-1 px-3 py-1 rounded bg-charcoal text-white text-xs" id="dropzoneFilename">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+<span id="selectedName">file.jpg</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact Information -->
+<div class="border-t border-border-subtle pt-6 space-y-4">
+<span class="font-headline text-base uppercase tracking-wider text-text-primary block font-bold">Your Contact Information</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="font-headline text-xs uppercase tracking-wider text-text-muted font-semibold" for="contactName">Full Name</label>
+<input class="w-full h-11 bg-paper-bg border border-border-subtle rounded px-3 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-primary transition-colors" id="contactName" placeholder="" required="" type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="font-headline text-xs uppercase tracking-wider text-text-muted font-semibold" for="contactPhone">Phone Number</label>
+<input class="w-full h-11 bg-paper-bg border border-border-subtle rounded px-3 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-primary transition-colors" id="contactPhone" placeholder="" required="" type="tel"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="font-headline text-xs uppercase tracking-wider text-text-muted font-semibold" for="contactEmail">Email Address</label>
+<input class="w-full h-11 bg-paper-bg border border-border-subtle rounded px-3 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-primary transition-colors" id="contactEmail" placeholder="" required="" type="email"/>
+</div>
+</div>
+<!-- Preferred Contact Method -->
+<div class="space-y-2">
+<label class="font-headline text-sm uppercase tracking-wider text-text-primary block font-semibold">
+                  Preferred Contact Method
+                </label>
+<div class="grid grid-cols-3 gap-2.5">
+<label class="cursor-pointer border border-border-subtle bg-paper-bg rounded p-2.5 flex items-center justify-center gap-2 hover:border-primary transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5 has-[:checked]:text-primary text-text-muted font-headline text-sm uppercase tracking-wider">
+<input checked="" class="accent-primary w-4 h-4" name="contactMethod" type="radio" value="whatsapp"/>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px] text-whatsapp-green">chat</span>
+<span>WhatsApp</span>
+</span>
+</label>
+<label class="cursor-pointer border border-border-subtle bg-paper-bg rounded p-2.5 flex items-center justify-center gap-2 hover:border-primary transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5 has-[:checked]:text-primary text-text-muted font-headline text-sm uppercase tracking-wider">
+<input class="accent-primary w-4 h-4" name="contactMethod" type="radio" value="phone"/>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px]">call</span>
+<span>Phone Call</span>
+</span>
+</label>
+<label class="cursor-pointer border border-border-subtle bg-paper-bg rounded p-2.5 flex items-center justify-center gap-2 hover:border-primary transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5 has-[:checked]:text-primary text-text-muted font-headline text-sm uppercase tracking-wider">
+<input class="accent-primary w-4 h-4" name="contactMethod" type="radio" value="email"/>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px]">mail</span>
+<span>Email</span>
+</span>
+</label>
+</div>
+</div>
+<!-- Privacy Policy Consent Checkbox -->
+<div class="pt-2">
+<label class="flex items-start gap-2.5 cursor-pointer text-xs text-text-muted select-none">
+<input class="mt-0.5 rounded border-border-subtle text-primary focus:ring-primary h-4 w-4" required="" type="checkbox"/>
+<span>
+                    I agree to Helmut Spares storing my details to respond to this enquiry (<a class="underline text-primary hover:text-primary-hover font-medium" href="#">Privacy Policy</a>).
+                  </span>
+</label>
+</div>
+<!-- Primary Submit Button -->
+<div class="pt-2">
+<button class="w-full bg-primary hover:bg-primary-hover text-on-primary h-12 rounded font-headline text-lg uppercase tracking-wider transition-colors flex items-center justify-center gap-2 shadow-sm font-bold" type="submit">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>Send Part Request</span>
+</button>
+</div>
+</form>
+<!-- Success Notification -->
+<div class="hidden mt-6 bg-[#E6F3F3] text-text-primary border border-primary/40 rounded p-4 flex items-start gap-3" id="successToast">
+<span class="material-symbols-outlined text-[22px] text-primary shrink-0">check_circle</span>
+<div class="space-y-1">
+<p class="font-headline text-lg uppercase font-bold text-text-primary">Enquiry Submitted</p>
+<p class="text-xs text-text-muted leading-relaxed">Thank you. Our workshop counter team at 19 Rhodes Avenue has received your enquiry and will be in touch shortly.</p>
+</div>
+</div>
+</div>
+<!-- RIGHT DIRECT WORKSHOP COLUMN (5 cols) -->
+<div class="lg:col-span-5 space-y-6">
+<!-- Workshop Direct Contact Card -->
+<div class="bg-surface-pure border border-border-subtle rounded p-6 sm:p-7 shadow-sm">
+<div class="border-b border-border-subtle pb-4 mb-5">
+<span class="inline-block bg-primary text-on-primary px-2.5 py-0.5 rounded font-headline text-xs uppercase tracking-wider font-semibold mb-2">Counter Direct</span>
+<h3 class="font-headline text-2xl uppercase text-text-primary font-bold">
+                  Prefer to talk directly to Helmut Spares?
+                </h3>
+<p class="text-xs text-text-muted mt-1 leading-relaxed">
+                  Call our counter team directly or message our WhatsApp desk for assistance.
+                </p>
+</div>
+<div class="space-y-3">
+<!-- Phone Button -->
+<a class="w-full flex items-center justify-between p-3.5 bg-paper-bg hover:border-primary border border-border-subtle rounded transition-all group" href="tel:0164213559">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-charcoal text-white flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</div>
+<div>
+<span class="font-headline text-xs text-text-muted uppercase tracking-wider block">Landline Counters</span>
+<span class="font-headline text-base font-bold text-text-primary group-hover:text-primary transition-colors">016 421 3559 / 016 455 1520</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:translate-x-1 transition-transform text-[20px]">chevron_right</span>
+</a>
+<!-- WhatsApp Button with Dark Text -->
+<a class="w-full flex items-center justify-between p-3.5 bg-whatsapp-green text-text-primary rounded hover:opacity-95 transition-all group shadow-sm font-semibold" href="#">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-black/10 flex items-center justify-center shrink-0 text-text-primary">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</div>
+<div>
+<span class="font-headline text-xs text-text-primary/75 uppercase tracking-wider block font-semibold">Direct Message</span>
+<span class="font-headline text-base font-bold text-text-primary">Chat on WhatsApp</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-primary group-hover:translate-x-1 transition-transform text-[20px]">arrow_forward</span>
+</a>
+</div>
+<!-- Counter Notice -->
+<div class="mt-5 p-3.5 bg-charcoal text-white rounded flex items-center gap-3">
+<span class="material-symbols-outlined text-whatsapp-green text-[24px] shrink-0">verified</span>
+<div class="flex flex-col">
+<span class="font-headline text-xs uppercase tracking-wider text-white font-bold">Counter Service</span>
+<p class="text-xs text-white/80 leading-tight">Serving classic VW enthusiasts across South Africa since 1975.</p>
+</div>
+</div>
+</div>
+<!-- In-Person Workshop & Warehouse Card -->
+<div class="bg-surface-pure border border-border-subtle rounded p-6 shadow-sm space-y-5">
+<div class="flex items-center justify-between border-b border-border-subtle pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">store</span>
+<h4 class="font-headline text-lg uppercase text-text-primary font-bold tracking-wider">In-Person Visit &amp; Counter Hours</h4>
+</div>
+<span class="font-headline text-xs bg-paper-bg border border-border-subtle text-text-muted px-2 py-0.5 rounded font-semibold uppercase">Vereeniging</span>
+</div>
+<!-- Location Info -->
+<div class="flex items-start gap-3 bg-paper-bg/60 p-3.5 rounded border border-border-subtle">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5">location_on</span>
+<div>
+<span class="font-headline text-sm text-text-primary uppercase tracking-wider font-bold block">Helmut Spares Warehouse</span>
+<p class="text-xs text-text-muted leading-snug">
+                    19 Rhodes Avenue, Vereeniging, 1930
+                  </p>
+<p class="text-xs text-text-muted mt-1">
+                    Opposite Civic Centre · Customer parking available
+                  </p>
+</div>
+</div>
+<!-- Operating Hours Matrix -->
+<div class="space-y-2 border-t border-border-subtle pt-3">
+<span class="font-headline text-xs uppercase tracking-wider text-text-muted block font-semibold">Store Counter Hours</span>
+<div class="grid grid-cols-1 gap-1.5 text-xs">
+<div class="flex items-center justify-between py-1 border-b border-border-subtle/50">
+<span class="text-text-primary font-medium">Monday - Thursday</span>
+<span class="text-text-muted font-semibold">09:00 - 17:00</span>
+</div>
+<div class="flex items-center justify-between py-1 border-b border-border-subtle/50">
+<span class="text-text-primary font-medium">Friday</span>
+<span class="text-text-muted font-semibold">09:00 - 12:00 &amp; 14:00 - 17:00</span>
+</div>
+<div class="flex items-center justify-between py-1 border-b border-border-subtle/50">
+<span class="text-text-primary font-medium">Saturday</span>
+<span class="text-text-muted font-semibold">09:00 - 13:00</span>
+</div>
+<div class="flex items-center justify-between py-1 text-red-700">
+<span class="font-medium">Sunday &amp; Public Holidays</span>
+<span class="font-semibold uppercase">Closed</span>
+</div>
+</div>
+</div>
+<!-- Workshop Photo -->
+<div class="relative rounded overflow-hidden border border-border-subtle">
+<img class="w-full h-44 object-cover" data-alt="Interior of Helmut Spares vintage automotive workshop in Vereeniging South Africa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSN5k50okRuqPg3sNrb5SOh1h58XJESwWEXi0zb3ZzZYK3xuCgvjE_GxMVtfTNIx7_Buj3NVQIgPmxUTW9xEfT9iroNHuMhtlAVC128aSV56cISZlhXqpnp2aaQVLVZ7drlnjOo03cRiqNAh_r9bl5AGxCztvWbvm0ul7CfHUQRoM5t6O0CnyHTaGii1q5Wj2R74HBvTSrC60e6vzGhxBa9s_BocZ3CYrS7WMNA9g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/30 to-transparent flex items-end p-3">
+<div class="flex items-center justify-between w-full text-white font-headline text-xs uppercase tracking-wider">
+<span class="font-bold">Workshop Floor · Est. 1975</span>
+<span class="text-whatsapp-green flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+                      Vereeniging
+                    </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Delivery Assurance Card -->
+<div class="bg-surface-pure border border-border-subtle rounded p-4.5 flex items-center justify-between p-4 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<div>
+<span class="font-headline text-sm uppercase tracking-wider text-text-primary font-bold block">Country-wide Delivery</span>
+<span class="text-xs text-text-muted">We deliver country-wide, to your door.</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Script for file input display -->
+<script>
+        const fileInput = document.getElementById('photoUpload');
+        const filenameDisplay = document.getElementById('dropzoneFilename');
+        const selectedName = document.getElementById('selectedName');
+
+        if (fileInput) {
+          fileInput.addEventListener('change', function(e) {
+            if (e.target.files && e.target.files.length > 0) {
+              selectedName.textContent = e.target.files[0].name;
+              filenameDisplay.classList.remove('hidden');
+            }
+          });
+        }
+      </script>
+</div>
+</main>
+<!-- Footer: Charcoal #231F20, 4 Columns -->
+<footer class="w-full bg-charcoal text-white mt-auto border-t-2 border-primary">
+<div class="max-w-7xl mx-auto px-4 lg:px-8 py-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Column 1: Pages -->
+<div class="space-y-4">
+<h4 class="font-headline text-lg uppercase tracking-wider text-white border-b border-white/15 pb-2 font-bold">Pages</h4>
+<ul class="space-y-2 text-xs text-white/80">
+<li class="hover:text-white transition-colors"><a href="#">Home</a></li>
+<li class="hover:text-white transition-colors"><a href="#">About Us</a></li>
+<li class="hover:text-white transition-colors"><a href="#">Beetle Price List</a></li>
+<li class="hover:text-white transition-colors"><a href="#">Shop Online</a></li>
+<li class="hover:text-white transition-colors"><a href="#">Contact Us</a></li>
+</ul>
+</div>
+<!-- Column 2: Shop Categories -->
+<div class="space-y-4">
+<h4 class="font-headline text-lg uppercase tracking-wider text-white border-b border-white/15 pb-2 font-bold">Shop Categories</h4>
+<ul class="space-y-2 text-xs text-white/80">
+<li class="hover:text-white transition-colors"><a href="#">Rubbers &amp; Window Seals</a></li>
+<li class="hover:text-white transition-colors"><a href="#">Chrome &amp; Body Trim</a></li>
+<li class="hover:text-white transition-colors"><a href="#">Brake Drums &amp; Kits</a></li>
+<li class="hover:text-white transition-colors"><a href="#">Engine Components</a></li>
+<li class="hover:text-white transition-colors"><a href="#">Suspension &amp; Steering</a></li>
+</ul>
+</div>
+<!-- Column 3: Contact -->
+<div class="space-y-4">
+<h4 class="font-headline text-lg uppercase tracking-wider text-white border-b border-white/15 pb-2 font-bold">Contact</h4>
+<ul class="space-y-2.5 text-xs text-white/80">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[17px] text-[#D8D1C2] shrink-0 mt-0.5">location_on</span>
+<span>19 Rhodes Avenue, Vereeniging, 1930</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[17px] text-[#D8D1C2] shrink-0">call</span>
+<span>016 421 3559</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[17px] text-[#D8D1C2] shrink-0">phone_enabled</span>
+<span>016 455 1520</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[17px] text-[#D8D1C2] shrink-0">mail</span>
+<span>info@helmutspares.co.za</span>
+</li>
+</ul>
+</div>
+<!-- Column 4: Hours & Socials -->
+<div class="space-y-4">
+<h4 class="font-headline text-lg uppercase tracking-wider text-white border-b border-white/15 pb-2 font-bold">Hours</h4>
+<ul class="space-y-1.5 text-xs text-white/80">
+<li><span class="text-white font-medium">Mon - Thu:</span> 09:00 - 17:00</li>
+<li><span class="text-white font-medium">Friday:</span> 09:00 - 12:00 &amp; 14:00 - 17:00</li>
+<li><span class="text-white font-medium">Saturday:</span> 09:00 - 13:00</li>
+<li class="text-red-400"><span class="font-medium">Sun &amp; Public Holidays:</span> Closed</li>
+</ul>
+<div class="pt-3 border-t border-white/15 space-y-3">
+<div class="flex items-center gap-3">
+<!-- Instagram Icon -->
+<a class="w-8 h-8 rounded bg-white/10 hover:bg-primary transition-colors flex items-center justify-center text-white" href="#" title="Instagram">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<!-- X Icon -->
+<a class="w-8 h-8 rounded bg-white/10 hover:bg-primary transition-colors flex items-center justify-center text-white" href="#" title="X">
+<svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+<a class="text-xs text-white/70 hover:text-white underline ml-2" href="#">Privacy Policy</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sub-footer copyright -->
+<div class="border-t border-white/10 py-4 bg-black/30">
+<div class="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/70">
+<p>© 2026 Helmut Spares. Est. 1975.</p>
+<p class="flex items-center gap-1.5">
+<span>We deliver country-wide, to your door.</span>
+</p>
+</div>
+</div>
+</footer>
+</body></html>

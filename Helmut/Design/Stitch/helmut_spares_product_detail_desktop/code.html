@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0C7475",
+            "primary-hover": "#095859",
+            "charcoal": "#231F20",
+            "paper-bg": "#F5F1E8",
+            "surface-pure": "#FFFFFF",
+            "border-subtle": "#D8D1C2",
+            "text-primary": "#17181A",
+            "text-muted": "#59554E",
+            "whatsapp-green": "#25D366",
+            "surface-card": "#FFFFFF",
+            "surface-container": "#EAE5DB"
+          },
+          fontFamily: {
+            "body": ["Inter", "sans-serif"],
+            "headline": ["Barlow Condensed", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-paper-bg font-body text-text-primary antialiased min-h-screen flex flex-col">
+<!-- Fixed Header -->
+<header class="fixed top-0 left-0 w-full z-50 bg-paper-bg">
+<!-- Top Strip: Charcoal #231F20 -->
+<div class="w-full bg-charcoal text-paper-bg px-4 lg:px-8 py-2 text-xs">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
+<div class="flex items-center gap-4 flex-wrap">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-[#A2F7F7]">call</span>
+<span class="font-medium tracking-wide">016 421 3559</span>
+</span>
+<span class="hidden md:inline text-neutral-500">·</span>
+<span class="flex items-center gap-1.5 text-neutral-300">
+<span class="material-symbols-outlined text-[15px] text-[#A2F7F7]">location_on</span>
+            19 Rhodes Avenue, Vereeniging
+          </span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-neutral-300">Mon-Thu 9-5 · Fri 9-12 &amp; 2-5 · Sat 9-1</span>
+<span class="text-neutral-500">·</span>
+<a class="flex items-center gap-1 text-whatsapp-green font-medium hover:underline" href="#">
+<span class="material-symbols-outlined text-[15px]">chat</span>
+            WhatsApp Quick Help
+          </a>
+</div>
+</div>
+</div>
+<!-- Main Navigation Bar -->
+<div class="w-full bg-surface-pure border-b border-border-subtle shadow-sm">
+<div class="h-20 max-w-7xl mx-auto px-4 lg:px-8 flex items-center justify-between gap-6">
+<!-- Logo -->
+<a class="flex items-center gap-3 shrink-0" href="#">
+<img alt="Helmut Spares Logo" class="h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrD8iDvkKPM_qb8zSGF9mYUt95oHdM2nqjT3Fham2V2vbyhWl3Pbr2TN913k6HFny2k5ebYsLgTMryZz5EmPbASCWYWbBJCh9F06Lchmxp6vMV3onQu5RO7omLi5Bq-svMazULnwwbN2pTowbVcrYz56cxFw0omZDerNqXPojFfSYtY1rEFx9HxLq6ftj5hm7XwZc-gDZTa2gWDYlvgEGDCPuYGHDEpT1nJhHX6Y-IpG"/>
+<div class="flex flex-col leading-none">
+<span class="font-headline text-2xl tracking-wide uppercase text-text-primary font-bold">Helmut Spares</span>
+<span class="font-body text-[11px] tracking-widest text-primary uppercase font-semibold">Est. 1975 · Vereeniging</span>
+</div>
+</a>
+<!-- Navigation Links in specified order -->
+<nav class="hidden lg:flex items-center gap-7 h-full">
+<a class="h-full flex items-center font-headline text-lg tracking-wider text-text-muted hover:text-text-primary transition-colors" href="#">Home</a>
+<a class="h-full flex items-center font-headline text-lg tracking-wider text-text-muted hover:text-text-primary transition-colors" href="#">About Us</a>
+<a class="h-full flex items-center font-headline text-lg tracking-wider text-text-muted hover:text-text-primary transition-colors" href="#">Beetle Price List</a>
+<!-- Highlighted Shop Online -->
+<a aria-current="page" class="h-full flex items-center font-headline text-lg tracking-wider font-bold text-primary border-b-2 border-primary" href="#">Shop Online</a>
+<a class="h-full flex items-center font-headline text-lg tracking-wider text-text-muted hover:text-text-primary transition-colors" href="#">Contact Us</a>
+</nav>
+<!-- Right Action Items -->
+<div class="flex items-center gap-3">
+<div class="relative hidden sm:block w-44 xl:w-56">
+<input class="w-full bg-paper-bg border border-border-subtle rounded-md py-1.5 pl-8 pr-3 text-sm font-body text-text-primary placeholder:text-text-muted focus:outline-none focus:border-primary" placeholder="Search parts..." type="text"/>
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-text-muted text-[17px]">search</span>
+</div>
+<a class="relative p-2 rounded-md hover:bg-paper-bg text-text-primary transition-colors flex items-center justify-center" href="#">
+<span class="material-symbols-outlined text-[23px]">shopping_cart</span>
+<span class="absolute top-1 right-1 bg-primary text-white text-[11px] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none">1</span>
+</a>
+<!-- Green WhatsApp button with DARK text (#17181A) linking to "#" -->
+<a class="hidden sm:flex items-center gap-1.5 bg-whatsapp-green text-text-primary hover:opacity-90 font-medium transition-opacity px-3.5 py-2 rounded-md text-xs uppercase tracking-wider font-headline" href="#">
+<span class="material-symbols-outlined text-[17px]">chat</span>
+<span>WhatsApp Us</span>
+</a>
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-white text-[18px]">person</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Body -->
+<main class="w-full pt-32 pb-16 bg-paper-bg flex-1">
+<div class="w-full max-w-7xl mx-auto px-4 lg:px-8">
+<!-- Breadcrumb in Sentence case -->
+<nav class="flex items-center gap-2 text-xs text-text-muted mb-6 flex-wrap font-body">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[13px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Beetle &amp; beach buggy parts</a>
+<span class="material-symbols-outlined text-[13px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Chrome &amp; trim</a>
+<span class="material-symbols-outlined text-[13px]">chevron_right</span>
+<span class="text-text-primary font-medium">VW Beetle chrome rear bumper</span>
+</nav>
+<!-- Main Product View: 2 Columns -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+<!-- Left Column: Gallery (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-4">
+<!-- Main Product Photo Frame -->
+<div class="relative bg-surface-pure border border-border-subtle rounded-lg p-8 flex items-center justify-center min-h-[460px] shadow-sm overflow-hidden group">
+<img alt="VW Beetle chrome rear bumper" class="w-full max-h-[380px] object-contain transition-transform duration-300 group-hover:scale-105" id="mainProductImage" src="https://lh3.googleusercontent.com/aida/ALJJyrDKVuhona54DbnZeKMn5olp0YkMIwt3cUrI-4aG-d5ixf-NHV87ud-LakZtasA1X9iC2N_AwnKUS3yL26h2VGTKole7I2VVPZxbt7WAaxcX7uu4-3g_7VoSoLf2hyEUhpaq3wL98eICPnM0H2GM8iHv6UNfiNHafY1IOYxWYdtdR78ynvmtH-2BfxqaDZ0Q685Jm9dzX6M2V-W8qw9ksIbBlBfya58tiDDBYk0ortY"/>
+<div class="absolute bottom-4 right-4 pointer-events-none opacity-20 flex items-center gap-1 font-headline text-lg text-text-primary uppercase tracking-widest">
+              Helmut Spares · 1975
+            </div>
+</div>
+<!-- Thumbnails Strip -->
+<div class="grid grid-cols-4 gap-3">
+<button class="thumb-btn border-2 border-primary bg-surface-pure rounded-md p-2 shadow-sm transition-all focus:outline-none" onclick="switchImage(0)">
+<img alt="Overview" class="w-full h-20 object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDKVuhona54DbnZeKMn5olp0YkMIwt3cUrI-4aG-d5ixf-NHV87ud-LakZtasA1X9iC2N_AwnKUS3yL26h2VGTKole7I2VVPZxbt7WAaxcX7uu4-3g_7VoSoLf2hyEUhpaq3wL98eICPnM0H2GM8iHv6UNfiNHafY1IOYxWYdtdR78ynvmtH-2BfxqaDZ0Q685Jm9dzX6M2V-W8qw9ksIbBlBfya58tiDDBYk0ortY"/>
+<span class="block text-center text-[11px] text-text-muted mt-1 font-medium">Full view</span>
+</button>
+<button class="thumb-btn border border-border-subtle bg-surface-pure rounded-md p-2 shadow-sm transition-all focus:outline-none opacity-75 hover:opacity-100" onclick="switchImage(1)">
+<img alt="Bracket detail" class="w-full h-20 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKQ4T0UezVtC8BlC9VD5z9n4crGL47IEqtHNUCZ1DkWuPWVYnIIE51xgsuYCOkO7Z9xQ3EgDZOHKJpqRwElVmAhP2h5XyP_kSG06kSaF8wTvBhcZPmOovQZ_fSscDCZKjYBvnZg93TBaUHpW9fttiqKAh69n_cEiHEhyrPunUP6KF8g248yVHZJ8y-XOpYR-M344rEmUd9syWelumQHac8PVgJSb4vGGFYSJ9BrGQ"/>
+<span class="block text-center text-[11px] text-text-muted mt-1 font-medium">Brackets</span>
+</button>
+<button class="thumb-btn border border-border-subtle bg-surface-pure rounded-md p-2 shadow-sm transition-all focus:outline-none opacity-75 hover:opacity-100" onclick="switchImage(2)">
+<img alt="Curvature profile" class="w-full h-20 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWsacS7gfE51GcP2pGdFSX1fWNQGKJLGsfJyt8lU46s6m07NH5snxHSltvkgnLq97cluqOv92TlJeduL0p75f8zMUHLnvCvlFfdFnOXU_9Q06oN_RS5NlNojoJrvtAvgz0XloFF45ZH9a5nJxxJhjZ7hhHH594MFTFXbbchSxjZX8jWxx56GPiHaAD7apBotDVkI2F_5RK9NACe9F3pW1BDddGoCyqfalkeKYtDto"/>
+<span class="block text-center text-[11px] text-text-muted mt-1 font-medium">Profile arc</span>
+</button>
+<button class="thumb-btn border border-border-subtle bg-surface-pure rounded-md p-2 shadow-sm transition-all focus:outline-none opacity-75 hover:opacity-100" onclick="switchImage(3)">
+<img alt="Fitted view" class="w-full h-20 object-cover rounded" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW00cu_nIJ-ql3C1JDICYbAcrSIpyqFvmm4uxHa8-7Q1IFRymv5oNjL7IgrnQB6VY5YV3hcutHv0S5rSUgxHT59JY323W4LUl2QKwdfkUTnfhdO_p2qTidbAWcfKEYYlSoM4cChVIi7HKVpKYxyL3_OZymnCnb5KRnMuwjvf9CXW5yqjfSqE7aNdeM0qg9jBKfbKcYr6NsFkS-YYF_r0lQik3hqnYHeqYAD2JYmSo"/>
+<span class="block text-center text-[11px] text-text-muted mt-1 font-medium">Installed</span>
+</button>
+</div>
+<!-- Workshop Bench Inspection Card -->
+<div class="bg-surface-pure border border-border-subtle rounded-lg p-4 flex items-center justify-between gap-4 mt-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]">precision_manufacturing</span>
+<div class="flex flex-col">
+<span class="font-headline text-lg uppercase text-text-primary font-bold">Individually bench inspected</span>
+<span class="text-xs text-text-muted">Each bumper is verified for straightness and finish before dispatch.</span>
+</div>
+</div>
+<span class="text-xs font-semibold text-primary uppercase font-headline tracking-wider shrink-0 bg-[#E6F3F3] px-2.5 py-1 rounded">Checked</span>
+</div>
+</div>
+<!-- Right Column: Purchasing & Technical Specs (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-5">
+<!-- Category badge -->
+<div class="flex items-center justify-between gap-2 flex-wrap">
+<span class="text-xs text-text-muted uppercase tracking-wider bg-surface-pure border border-border-subtle px-2.5 py-1 rounded font-medium">Classic VW replacement part</span>
+</div>
+<!-- Product Title in Sentence Case -->
+<div class="space-y-1">
+<h1 class="font-headline text-3xl md:text-4xl uppercase text-text-primary leading-tight font-bold tracking-tight">VW Beetle Chrome Rear Bumper</h1>
+<p class="text-sm text-text-muted">Direct replacement rear bumper blade engineered to classic factory press standards.</p>
+</div>
+<!-- Price & Stock Notice -->
+<div class="bg-surface-pure border border-border-subtle rounded-lg p-5 shadow-sm space-y-3">
+<div class="flex items-baseline justify-between">
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-4xl text-primary font-bold tracking-tight">R 2,499</span>
+<span class="text-xs text-text-muted font-medium">ZAR</span>
+</div>
+<span class="text-xs text-text-muted mt-1 block">Includes 15% VAT · Tax invoice provided</span>
+</div>
+</div>
+<div class="pt-2 border-t border-border-subtle">
+<span class="inline-flex items-center gap-1.5 text-xs text-text-primary font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary">inventory_2</span>
+                Over 15,000 parts in stock. Call to confirm availability.
+              </span>
+</div>
+</div>
+<!-- Fitment Box -->
+<div class="bg-surface-pure border border-border-subtle rounded-lg p-4 space-y-2">
+<div class="flex items-center gap-2 text-primary font-headline text-lg uppercase font-bold">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Vehicle compatibility</span>
+</div>
+<p class="text-sm text-text-primary leading-relaxed">
+<strong class="font-semibold text-text-primary">Fits:</strong> VW Beetle 1200, 1300, 1500, 1600 (Model years 1965 – 1978). Includes standard pre-stamped over-rider mounting holes and correct rear apron rake.
+            </p>
+<p class="text-xs text-text-muted pt-1">
+              Also compatible with VW beach buggy retrofits.
+            </p>
+</div>
+<!-- Description Summary -->
+<p class="text-sm text-text-muted leading-relaxed bg-surface-pure border border-border-subtle p-4 rounded-lg">
+            High lustre chrome finish on heavy-gauge pressed steel. Engineered for South African conditions while preserving classic factory curvature.
+          </p>
+<!-- Quantity & Add to Cart Action -->
+<div class="space-y-3 pt-1">
+<div class="flex items-center gap-3">
+<!-- Stepper -->
+<div class="flex items-center bg-surface-pure border border-border-subtle rounded-md shadow-sm h-12 px-2 shrink-0">
+<button aria-label="Decrease quantity" class="w-8 h-8 flex items-center justify-center text-text-muted hover:text-text-primary rounded transition-colors" onclick="decrementQty()">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<input class="w-10 text-center font-headline text-lg font-bold bg-transparent text-text-primary focus:outline-none [-moz-appearance:_textfield] [&amp;::-webkit-inner-spin-button]:m-0 [&amp;::-webkit-inner-spin-button]:appearance-none" id="qtyInput" min="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="w-8 h-8 flex items-center justify-center text-text-muted hover:text-text-primary rounded transition-colors" onclick="incrementQty()">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<!-- Large Teal Button #0C7475 "Add to cart" -->
+<button class="flex-1 h-12 bg-primary hover:bg-primary-hover text-white rounded-md font-headline text-lg uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-colors active:scale-[0.99]" onclick="addToCartTrigger()">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+<span>Add to cart</span>
+</button>
+</div>
+<!-- Secondary WhatsApp Button with DARK text (#17181A) linking to "#" -->
+<a class="w-full h-11 bg-whatsapp-green hover:opacity-95 text-text-primary rounded-md font-headline text-base uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-opacity font-semibold" href="#">
+<span class="material-symbols-outlined text-[20px] text-text-primary">chat</span>
+<span>Ask about this part on WhatsApp (016 421 3559)</span>
+</a>
+</div>
+<!-- Delivery Notice -->
+<div class="bg-surface-pure border border-border-subtle rounded-lg p-4 shadow-sm space-y-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0">local_shipping</span>
+<div>
+<span class="font-headline text-base uppercase text-text-primary font-bold">Delivery service</span>
+<p class="text-sm text-text-muted">We deliver country-wide, to your door.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Information Tabs -->
+<div class="w-full bg-surface-pure border border-border-subtle rounded-lg shadow-sm overflow-hidden mb-16">
+<!-- Tab Headers -->
+<div class="flex items-center bg-paper-bg px-4 pt-3 gap-2 border-b border-border-subtle overflow-x-auto">
+<button class="px-6 py-2.5 font-headline text-base uppercase tracking-wider transition-all rounded-t-md bg-surface-pure text-primary font-bold border-t border-x border-border-subtle" id="tabBtn-desc" onclick="switchTab('tab-desc')">
+            Detailed description
+          </button>
+<button class="px-6 py-2.5 font-headline text-base uppercase tracking-wider transition-all rounded-t-md text-text-muted hover:text-text-primary font-semibold" id="tabBtn-fitment" onclick="switchTab('tab-fitment')">
+            Vehicle fitment &amp; dimensions
+          </button>
+<button class="px-6 py-2.5 font-headline text-base uppercase tracking-wider transition-all rounded-t-md text-text-muted hover:text-text-primary font-semibold" id="tabBtn-shipping" onclick="switchTab('tab-shipping')">
+            Delivery details
+          </button>
+</div>
+<!-- Tab Content 1: Detailed Description -->
+<div class="p-8 space-y-6" id="tab-desc">
+<div class="max-w-4xl space-y-4">
+<h2 class="font-headline text-2xl uppercase text-text-primary font-bold">Classic chrome bumper styling</h2>
+<p class="text-sm text-text-muted leading-relaxed font-body">
+              Every classic Volkswagen Beetle restoration depends on exterior trim integrity. Our reproduction chrome rear bumper is stamped from cold-rolled automotive-grade sheet steel, mirroring the curvature and tuck of classic Beetle tail sections.
+            </p>
+<p class="text-sm text-text-muted leading-relaxed font-body">
+              Provides durable shine and corrosion resistance suited for South African roads and coastal areas, preserving authentic period-correct body lines.
+            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+<div class="bg-paper-bg border border-border-subtle p-4 rounded-md space-y-1.5">
+<span class="material-symbols-outlined text-primary text-[24px]">handyman</span>
+<h3 class="font-headline text-lg uppercase text-text-primary font-bold">Pre-drilled alignment</h3>
+<p class="text-xs text-text-muted">Pre-stamped with correct factory spacing for vertical over-riders and stock bumper bracket irons.</p>
+</div>
+<div class="bg-paper-bg border border-border-subtle p-4 rounded-md space-y-1.5">
+<span class="material-symbols-outlined text-primary text-[24px]">inventory</span>
+<h3 class="font-headline text-lg uppercase text-text-primary font-bold">Stock availability</h3>
+<p class="text-xs text-text-muted">Over 15,000 parts in stock. Call to confirm availability.</p>
+</div>
+</div>
+</div>
+<!-- Tab Content 2: Fitment & Dimensions -->
+<div class="hidden p-8 space-y-6" id="tab-fitment">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h3 class="font-headline text-2xl uppercase text-text-primary font-bold mb-4">Application chart</h3>
+<div class="border border-border-subtle rounded-md overflow-hidden">
+<table class="w-full text-left text-xs">
+<thead class="bg-paper-bg font-headline text-sm uppercase text-text-primary border-b border-border-subtle">
+<tr>
+<th class="p-3">Model</th>
+<th class="p-3">Years</th>
+<th class="p-3">Notes</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle text-text-muted">
+<tr class="bg-surface-pure"><td class="p-3 font-medium text-text-primary">VW Beetle 1200 / 1300</td><td class="p-3">1965 – 1974</td><td class="p-3">Direct fit</td></tr>
+<tr class="bg-paper-bg/40"><td class="p-3 font-medium text-text-primary">VW Beetle 1500 / 1600</td><td class="p-3">1968 – 1978</td><td class="p-3">Direct fit</td></tr>
+<tr class="bg-surface-pure"><td class="p-3 font-medium text-text-primary">VW SP1600</td><td class="p-3">1976 – 1978</td><td class="p-3">Requires standard bracket</td></tr>
+<tr class="bg-paper-bg/40"><td class="p-3 font-medium text-text-primary">Beach Buggy</td><td class="p-3">Custom</td><td class="p-3">Requires buggy bumper stays</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div>
+<h3 class="font-headline text-2xl uppercase text-text-primary font-bold mb-4">Specifications</h3>
+<ul class="space-y-2.5 text-xs text-text-muted">
+<li class="flex items-center justify-between p-3 bg-paper-bg/60 border border-border-subtle rounded-md">
+<span>Total arc length:</span>
+<span class="font-medium text-text-primary">1,540 mm (following curve)</span>
+</li>
+<li class="flex items-center justify-between p-3 bg-paper-bg/60 border border-border-subtle rounded-md">
+<span>Blade profile height:</span>
+<span class="font-medium text-text-primary">95 mm</span>
+</li>
+<li class="flex items-center justify-between p-3 bg-paper-bg/60 border border-border-subtle rounded-md">
+<span>Steel gauge:</span>
+<span class="font-medium text-text-primary">1.5 mm heavy pressed</span>
+</li>
+<li class="flex items-center justify-between p-3 bg-paper-bg/60 border border-border-subtle rounded-md">
+<span>Net weight:</span>
+<span class="font-medium text-text-primary">4.85 kg</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Tab Content 3: Delivery -->
+<div class="hidden p-8 space-y-4" id="tab-shipping">
+<div class="max-w-2xl space-y-3">
+<h3 class="font-headline text-2xl uppercase text-text-primary font-bold">Delivery service</h3>
+<p class="text-sm text-text-muted leading-relaxed">
+              We deliver country-wide, to your door.
+            </p>
+<div class="p-4 bg-paper-bg border border-border-subtle rounded-md flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]">store</span>
+<div class="flex flex-col">
+<span class="font-headline text-base uppercase text-text-primary font-bold">Local counter collection</span>
+<span class="text-xs text-text-muted">Available at Helmut Spares, 19 Rhodes Avenue, Vereeniging.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Related Products: "You may also need" -->
+<div class="w-full space-y-6 mb-16">
+<div>
+<span class="text-xs uppercase tracking-widest text-primary font-bold font-headline">Related items</span>
+<h2 class="font-headline text-3xl uppercase text-text-primary font-bold">You may also need</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Accessory Card 1 -->
+<div class="bg-surface-pure border border-border-subtle rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="bg-paper-bg rounded-md p-4 flex items-center justify-center h-44 mb-4">
+<img alt="Bumper bracket kit" class="max-h-36 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx09xoDRqSu84Dgee6TfnjBkE91ToF8SisaQyTwXVUbIEKZdQoMiA8tJ0FEjgiZ7QGvfPpUlBfapnJ8W_O-M4QCS2p3yTEUkcFOPqoRXJmh_2S2LFj4QO5BdBp7rKpidS_zSgng-3tCLorVQPRfZkJ2tJafZoZDPn3JwvK-J2gbAimZ3uTWfOVKcPbV8kyhWg0aUthTqoSjgn_zpe9ziiSzfGwYoVwZ1g2nsQwfjE"/>
+</div>
+<h3 class="font-headline text-xl uppercase text-text-primary font-bold leading-tight">Bumper bracket kit</h3>
+<p class="text-xs text-text-muted mt-1.5 leading-relaxed">Mounting brackets to attach rear bumper directly to chassis horns.</p>
+</div>
+<div class="pt-4 mt-2 flex items-center justify-between border-t border-border-subtle/50">
+<span class="font-headline text-2xl text-text-primary font-bold">R 285</span>
+<!-- Teal Add Button -->
+<button class="h-9 px-4 bg-primary hover:bg-primary-hover text-white font-headline text-base uppercase tracking-wider rounded-md transition-colors flex items-center gap-1" onclick="addAccessory(this)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add</span>
+</button>
+</div>
+</div>
+<!-- Accessory Card 2 -->
+<div class="bg-surface-pure border border-border-subtle rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="bg-paper-bg rounded-md p-4 flex items-center justify-center h-44 mb-4">
+<img alt="Bumper over-riders" class="max-h-36 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF06cJMZpLQuRJE92J-Z91lsOQHU6fNxMqWqG7eY9A5fz_pGUagxahy2RPNF4wCZWRBXWzY4Uznul7uHqZTtiNM3IEnwX1NRAinS72cfb8i-vQkPtl1-zytpSDnqULC0276lzkq4p4abS98Xe9IF8krjpDCmiPtoVrMGCpRaEp5c23QJHa7MAlRE_oVKylf-IlXLNXxdVqCoyW3kkatbYvuAHMhoQlyU7J1-ugSz4"/>
+</div>
+<h3 class="font-headline text-xl uppercase text-text-primary font-bold leading-tight">Bumper over-riders with rubber strip</h3>
+<p class="text-xs text-text-muted mt-1.5 leading-relaxed">Chrome over-riders featuring molded black rubber impact strip.</p>
+</div>
+<div class="pt-4 mt-2 flex items-center justify-between border-t border-border-subtle/50">
+<span class="font-headline text-2xl text-text-primary font-bold">R 450</span>
+<!-- Teal Add Button -->
+<button class="h-9 px-4 bg-primary hover:bg-primary-hover text-white font-headline text-base uppercase tracking-wider rounded-md transition-colors flex items-center gap-1" onclick="addAccessory(this)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add</span>
+</button>
+</div>
+</div>
+<!-- Accessory Card 3 -->
+<div class="bg-surface-pure border border-border-subtle rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="bg-paper-bg rounded-md p-4 flex items-center justify-center h-44 mb-4">
+<img alt="Stainless steel bolt set" class="max-h-36 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1yD8rHJF4fS7tlpnH3TrJaIPQth3L9ytTsFK8AFgdJ0J-HHEr4fJFCjBnrgRDdWgHBLwS8FQWMTlmsu5rRmgakXpdOGV3xO0x0Q7r3NJr4MKlxvi6SrFRIbkvyYWO8c_htKNUq5l0SS9Jf4DW7GfHKtGnBRl7zEN0fas8H36zKl0Mvsteu7LTnm9TSjzuExOyG2Y5OTbe30TEn-tCut0P08orqE9v7s0rMjmEEb4"/>
+</div>
+<h3 class="font-headline text-xl uppercase text-text-primary font-bold leading-tight">Stainless steel bumper bolt set</h3>
+<p class="text-xs text-text-muted mt-1.5 leading-relaxed">Polished domed carriage bolts and wave washers for bumper mounting.</p>
+</div>
+<div class="pt-4 mt-2 flex items-center justify-between border-t border-border-subtle/50">
+<span class="font-headline text-2xl text-text-primary font-bold">R 120</span>
+<!-- Teal Add Button -->
+<button class="h-9 px-4 bg-primary hover:bg-primary-hover text-white font-headline text-base uppercase tracking-wider rounded-md transition-colors flex items-center gap-1" onclick="addAccessory(this)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add</span>
+</button>
+</div>
+</div>
+<!-- Accessory Card 4 -->
+<div class="bg-surface-pure border border-border-subtle rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="bg-paper-bg rounded-md p-4 flex items-center justify-center h-44 mb-4">
+<img alt="Rubber grommets" class="max-h-36 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx1LZRldKOwQCd6uvk8AOImj9Dq9SdcWJSqlpHvgcH_ltUSdZkfP7Mq6K4G2ht9IaUMJlG7aN-OCqrBru6l-H-ex9-uRGRQdOif5BqM9_byx4UeSiBIh7lyhOoofkNyUlfw66r7JwUJf10NKn7lm3cqIbC8poKILgIddqsMsq_azbiFpGkov8pSHJVsLvxhYTZepaXoTGaxj64d8AAbDR877L4ZcrPzeNxTXD10Us"/>
+</div>
+<h3 class="font-headline text-xl uppercase text-text-primary font-bold leading-tight">Bumper to body rubber grommets</h3>
+<p class="text-xs text-text-muted mt-1.5 leading-relaxed">Rubber seals for bumper bracket pass-through on rear fenders.</p>
+</div>
+<div class="pt-4 mt-2 flex items-center justify-between border-t border-border-subtle/50">
+<span class="font-headline text-2xl text-text-primary font-bold">R 95</span>
+<!-- Teal Add Button -->
+<button class="h-9 px-4 bg-primary hover:bg-primary-hover text-white font-headline text-base uppercase tracking-wider rounded-md transition-colors flex items-center gap-1" onclick="addAccessory(this)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Workshop Contact Bar -->
+<div class="w-full bg-charcoal text-paper-bg rounded-lg p-6 flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-white text-[24px]">call</span>
+</div>
+<div>
+<h4 class="font-headline text-xl uppercase font-bold text-white">Need help verifying part fitment?</h4>
+<p class="text-xs text-neutral-300">Over 15,000 parts in stock. Call to confirm availability.</p>
+</div>
+</div>
+<!-- WhatsApp verification button with dark text #17181A -->
+<a class="shrink-0 bg-whatsapp-green hover:opacity-90 text-text-primary px-5 py-2.5 rounded-md font-headline text-base uppercase tracking-wider font-semibold flex items-center gap-2 shadow-sm transition-opacity" href="#">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>Contact on WhatsApp</span>
+</a>
+</div>
+</div>
+</main>
+<!-- Footer: Charcoal #231F20 with 4 Columns -->
+<footer class="w-full bg-charcoal text-paper-bg mt-auto border-t-2 border-primary">
+<div class="max-w-7xl mx-auto px-4 lg:px-8 py-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Column 1: Pages in required order -->
+<div class="space-y-4">
+<h4 class="font-headline text-lg uppercase tracking-wider text-white border-b border-neutral-700 pb-2">Pages</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li><a class="hover:text-primary transition-colors" href="#">Home</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Beetle Price List</a></li>
+<li><a class="hover:text-primary transition-colors font-semibold text-white" href="#">Shop Online</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<!-- Column 2: Shop categories -->
+<div class="space-y-4">
+<h4 class="font-headline text-lg uppercase tracking-wider text-white border-b border-neutral-700 pb-2">Shop categories</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li><a class="hover:text-primary transition-colors" href="#">Rubbers &amp; window seals</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Chrome &amp; body trim</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Brake drums, discs &amp; kits</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Engine components</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Suspension &amp; steering</a></li>
+</ul>
+</div>
+<!-- Column 3: Contact -->
+<div class="space-y-4">
+<h4 class="font-headline text-lg uppercase tracking-wider text-white border-b border-neutral-700 pb-2">Contact</h4>
+<ul class="space-y-3 text-sm text-neutral-300">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[#A2F7F7] text-[18px] shrink-0 mt-0.5">location_on</span>
+<span>19 Rhodes Avenue, Vereeniging, Gauteng, 1930</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[#A2F7F7] text-[18px] shrink-0">call</span>
+<span>016 421 3559</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[#A2F7F7] text-[18px] shrink-0">mail</span>
+<span>info@helmutspares.co.za</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">chat</span>
+<a class="hover:underline text-whatsapp-green font-medium" href="#">WhatsApp Support</a>
+</li>
+</ul>
+</div>
+<!-- Column 4: Hours & Socials -->
+<div class="space-y-4">
+<h4 class="font-headline text-lg uppercase tracking-wider text-white border-b border-neutral-700 pb-2">Hours</h4>
+<ul class="space-y-1.5 text-xs text-neutral-300">
+<li><span class="font-semibold text-white">Mon - Thu:</span> 09:00 - 17:00</li>
+<li><span class="font-semibold text-white">Friday:</span> 09:00 - 12:00 &amp; 14:00 - 17:00</li>
+<li><span class="font-semibold text-white">Saturday:</span> 09:00 - 13:00</li>
+<li><span class="text-neutral-400">Sunday &amp; Public Holidays:</span> Closed</li>
+</ul>
+<div class="pt-4 border-t border-neutral-700 space-y-3">
+<span class="text-xs uppercase font-headline tracking-wider text-neutral-400 block">Follow Us</span>
+<div class="flex items-center gap-3">
+<!-- Instagram Icon -->
+<a aria-label="Instagram" class="w-8 h-8 rounded bg-neutral-800 flex items-center justify-center text-neutral-300 hover:text-white hover:bg-neutral-700 transition-colors" href="#">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<!-- X (Twitter) Icon -->
+<a aria-label="X" class="w-8 h-8 rounded bg-neutral-800 flex items-center justify-center text-neutral-300 hover:text-white hover:bg-neutral-700 transition-colors" href="#">
+<svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+</div>
+<div>
+<a class="text-xs text-neutral-400 hover:text-white hover:underline transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Copyright Sub-Footer -->
+<div class="border-t border-neutral-800 py-4 bg-[#1A1718]">
+<div class="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-neutral-400 font-body">
+<p>© 2026 Helmut Spares. Est. 1975.</p>
+<p class="flex items-center gap-1">
+<span>Specialising in Classic VW parts across South Africa</span>
+</p>
+</div>
+</div>
+</footer>
+<script>
+    function switchImage(index) {
+      const thumbs = document.querySelectorAll('.thumb-btn');
+      thumbs.forEach((t, i) => {
+        if(i === index) {
+          t.classList.add('border-primary');
+          t.classList.remove('border-border-subtle', 'opacity-75');
+        } else {
+          t.classList.remove('border-primary');
+          t.classList.add('border-border-subtle', 'opacity-75');
+        }
+      });
+    }
+
+    function incrementQty() {
+      const input = document.getElementById('qtyInput');
+      let val = parseInt(input.value, 10) || 1;
+      input.value = val + 1;
+    }
+
+    function decrementQty() {
+      const input = document.getElementById('qtyInput');
+      let val = parseInt(input.value, 10) || 1;
+      if (val > 1) {
+        input.value = val - 1;
+      }
+    }
+
+    function switchTab(tabId) {
+      ['tab-desc', 'tab-fitment', 'tab-shipping'].forEach(id => {
+        const content = document.getElementById(id);
+        const btn = document.getElementById('tabBtn-' + id.replace('tab-', ''));
+        if (id === tabId) {
+          content.classList.remove('hidden');
+          btn.classList.add('bg-surface-pure', 'text-primary', 'font-bold', 'border-t', 'border-x', 'border-border-subtle');
+          btn.classList.remove('text-text-muted');
+        } else {
+          content.classList.add('hidden');
+          btn.classList.remove('bg-surface-pure', 'text-primary', 'font-bold', 'border-t', 'border-x', 'border-border-subtle');
+          btn.classList.add('text-text-muted');
+        }
+      });
+    }
+
+    function addToCartTrigger() {
+      const qty = document.getElementById('qtyInput').value;
+      const cartBadge = document.querySelector('header a span.rounded-full');
+      if (cartBadge) {
+        let current = parseInt(cartBadge.innerText, 10) || 0;
+        cartBadge.innerText = current + parseInt(qty, 10);
+      }
+      alert('Added ' + qty + 'x VW Beetle Chrome Rear Bumper to your cart');
+    }
+
+    function addAccessory(btn) {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">check</span> Added';
+      btn.classList.remove('bg-primary');
+      btn.classList.add('bg-[#095859]');
+      const cartBadge = document.querySelector('header a span.rounded-full');
+      if (cartBadge) {
+        let current = parseInt(cartBadge.innerText, 10) || 0;
+        cartBadge.innerText = current + 1;
+      }
+      setTimeout(() => {
+        btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">add</span> Add';
+        btn.classList.remove('bg-[#095859]');
+        btn.classList.add('bg-primary');
+      }, 2000);
+    }
+  </script>
+</body></html>
